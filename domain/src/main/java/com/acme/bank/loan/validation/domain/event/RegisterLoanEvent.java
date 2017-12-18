@@ -3,6 +3,7 @@ package com.acme.bank.loan.validation.domain.event;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
+@SuppressWarnings({"unused"})
 public class RegisterLoanEvent {
 
     private UUID uuid;

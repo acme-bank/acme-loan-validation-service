@@ -1,7 +1,6 @@
 package com.acme.bank.loan.validation.service.helper;
 
-import java.util.Properties;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.Serde;
@@ -16,9 +15,9 @@ import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.support.serializer.JsonSerializer;
 import org.springframework.stereotype.Component;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Properties;
 
-@SuppressWarnings({"unused", "WeakerAccess"})
+@SuppressWarnings({"unused", "WeakerAccess", "Duplicates"})
 @Component
 public class KafkaHelper {
 
@@ -45,7 +44,7 @@ public class KafkaHelper {
         return config;
     }
 
-    public <T> Consumed<String, T> cosumedWith(Class<T> clazz) {
+    public <T> Consumed<String, T> consumedWith(Class<T> clazz) {
         return Consumed.with(Serdes.String(), jsonSerde(clazz));
     }
 

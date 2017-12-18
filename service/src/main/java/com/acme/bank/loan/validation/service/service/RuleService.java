@@ -1,22 +1,22 @@
-package com.acme.bank.loan.validation.service.rule;
+package com.acme.bank.loan.validation.service.service;
 
-import java.util.List;
-
+import com.acme.bank.loan.validation.domain.event.RegisterLoanEvent;
+import com.acme.bank.loan.validation.service.rule.Rule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-import com.acme.bank.loan.validation.domain.event.RegisterLoanEvent;
+import java.util.List;
 
-@Component
-public class RuleEngine {
+@Service
+public class RuleService {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(RuleEngine.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RuleService.class);
     private final List<Rule> rules;
 
     @Autowired
-    public RuleEngine(List<Rule> rules) {
+    public RuleService(List<Rule> rules) {
         this.rules = rules;
     }
 

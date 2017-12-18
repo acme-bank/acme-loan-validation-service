@@ -1,11 +1,10 @@
 package com.acme.bank.loan.validation.domain.converter;
 
-import java.time.ZonedDateTime;
-
-import org.springframework.stereotype.Component;
-
 import com.acme.bank.loan.validation.domain.event.RegisterLoanEvent;
 import com.acme.bank.loan.validation.domain.event.ValidateLoanEvent;
+import org.springframework.stereotype.Component;
+
+import java.time.ZonedDateTime;
 
 @Component
 public class RegisterLoanEventToValidateLoanEventConverter extends AbstractConverter<RegisterLoanEvent, ValidateLoanEvent> {
@@ -14,6 +13,7 @@ public class RegisterLoanEventToValidateLoanEventConverter extends AbstractConve
     public ValidateLoanEvent convert(RegisterLoanEvent registerLoanEvent) {
         ValidateLoanEvent validateLoanEvent = new ValidateLoanEvent();
         validateLoanEvent.setUuid(registerLoanEvent.getUuid());
+        validateLoanEvent.setPersonalId(registerLoanEvent.getPersonalId());
         validateLoanEvent.setValidatedTimestamp(ZonedDateTime.now());
         return validateLoanEvent;
     }

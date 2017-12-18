@@ -3,9 +3,11 @@ package com.acme.bank.loan.validation.domain.event;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
+@SuppressWarnings({"unused"})
 public class ValidateLoanEvent {
 
     private UUID uuid;
+    private String personalId;
     private ZonedDateTime validatedTimestamp;
 
     public UUID getUuid() {
@@ -14,6 +16,14 @@ public class ValidateLoanEvent {
 
     public void setUuid(UUID uuid) {
         this.uuid = uuid;
+    }
+
+    public String getPersonalId() {
+        return personalId;
+    }
+
+    public void setPersonalId(String personalId) {
+        this.personalId = personalId;
     }
 
     public ZonedDateTime getValidatedTimestamp() {
