@@ -2,7 +2,11 @@ version: "3"
 
 services:
   acme_loan_validation:
-    image: docker.acme.com/acme-loan-validation
+    build:
+      context: .
+      args:
+        APPLICATION_NAME: acme-loan-validation
+    image: docker.acme.com/acme-loan-validation:latest
     container_name: acme_loan_validation_01
     hostname: loan-validation
     domainname: acme.com
