@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  acme_loan_validation:
+    image: docker.acme.com/acme-loan-validation
+    container_name: acme_loan_validation_01
+    hostname: loan-validation
+    domainname: acme.com
+    ports:
+      - 8002:8080
+    networks:
+      acme:
+
+networks:
+  acme:
+    external:
+      name: acme
