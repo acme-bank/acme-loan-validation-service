@@ -12,7 +12,7 @@ public class RegisterLoanEventToRejectLoanEventConverter extends AbstractConvert
     @Override
     public RejectLoanEvent convert(RegisterLoanEvent registerLoanEvent) {
         RejectLoanEvent rejectLoanEvent = new RejectLoanEvent();
-        rejectLoanEvent.setUuid(registerLoanEvent.getUuid());
+        rejectLoanEvent.setEventId(registerLoanEvent.getEventId());
         rejectLoanEvent.setRejectedTimestamp(ZonedDateTime.now());
         return rejectLoanEvent;
     }

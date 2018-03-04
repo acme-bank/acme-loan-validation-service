@@ -12,8 +12,8 @@ public class RegisterLoanEventToValidateLoanEventConverter extends AbstractConve
     @Override
     public ValidateLoanEvent convert(RegisterLoanEvent registerLoanEvent) {
         ValidateLoanEvent validateLoanEvent = new ValidateLoanEvent();
-        validateLoanEvent.setUuid(registerLoanEvent.getUuid());
-        validateLoanEvent.setPersonalId(registerLoanEvent.getPersonalId());
+        validateLoanEvent.setEventId(registerLoanEvent.getEventId());
+        validateLoanEvent.setPersonId(registerLoanEvent.getPersonId());
         validateLoanEvent.setValidatedTimestamp(ZonedDateTime.now());
         return validateLoanEvent;
     }

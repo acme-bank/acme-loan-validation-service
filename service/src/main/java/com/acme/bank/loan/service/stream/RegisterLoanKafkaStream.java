@@ -73,7 +73,7 @@ public class RegisterLoanKafkaStream {
     }
 
     private <T> KeyValue<String, T> convert(String key, RegisterLoanEvent event, Class<T> clazz, KafkaTopic targetTopic) {
-        LOGGER.info("Sending event with key {} to topic {}", key, targetTopic);
+        LOGGER.info("Sending event with key {} to topic {}", key, targetTopic.getTopicName());
 
         return new KeyValue<>(key, conversionService.convert(event, clazz));
     }
